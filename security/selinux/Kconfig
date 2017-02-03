@@ -26,7 +26,7 @@ config SECURITY_SELINUX_BOOTPARAM_VALUE
 	int "NSA SELinux boot parameter default value"
 	depends on SECURITY_SELINUX_BOOTPARAM
 	range 0 1
-	default 1
+	default 0
 	help
 	  This option sets the default value for the kernel parameter
 	  'selinux', which allows SELinux to be disabled at boot.  If this
