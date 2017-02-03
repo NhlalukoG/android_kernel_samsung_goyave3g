@@ -48,7 +48,7 @@
 #define GR_GEN1			(REG_GLB_GEN1)
 #endif
 
-#define FREQ_TABLE_SIZE 	10
+#define FREQ_TABLE_SIZE 	15
 #define DVFS_BOOT_TIME	(30 * HZ)
 #define SHARK_TDPLL_FREQUENCY	(768000)
 #define TRANSITION_LATENCY	(100 * 1000) /* ns */
@@ -165,11 +165,21 @@ static unsigned int get_mcu_clk_freq(void)
 
 static struct cpufreq_table_data sc8830_cpufreq_table_data_cs = {
 	.freq_tbl = {
-		{0, 1200000},
-		{1, 1000000},
-		{2, SHARK_TDPLL_FREQUENCY},
-		{3, 600000},
-		{4, CPUFREQ_TABLE_END},
+		{0, 1600000},
+		{1, 1500000},
+		{2, 1400000},
+		{3, 1300000},
+		{4, 1200000},
+		{5, 1100000},
+		{6, 1000000},
+		{7, 900000},
+		{8, 800000},
+		{9, 700000},
+		{10, 600000},
+		{11, 500000},
+		{12, 400000},
+		{13, 350000},
+		{14, CPUFREQ_TABLE_END},
 	},
 	.vddarm_mv = {
 		1300000,
@@ -203,9 +213,21 @@ static struct cpufreq_table_data sc7715_cpufreq_table_data = {
 
 static struct cpufreq_table_data sc8830_cpufreq_table_data_es = {
 	.freq_tbl = {
-		{0, 1000000},
-		{1, SHARK_TDPLL_FREQUENCY},
-		{2, CPUFREQ_TABLE_END},
+		{0, 1600000},
+		{1, 1500000},
+		{2, 1400000},
+		{3, 1300000},
+		{4, 1200000},
+		{5, 1100000},
+		{6, 1000000},
+		{7, 900000},
+		{8, 800000},
+		{9, 700000},
+		{10, 600000},
+		{11, 500000},
+		{12, 400000},
+		{13, 350000},
+		{14, CPUFREQ_TABLE_END},
 	},
 	.vddarm_mv = {
 		1250000,
@@ -232,11 +254,22 @@ static struct cpufreq_table_data sc8830t_cpufreq_table_data_es = {
 #else
 static struct cpufreq_table_data sc8830t_cpufreq_table_data_es_1300 = {
 	.freq_tbl = {
-		{0, 1300000},
-		{1, 1200000},
-		{2, 1000000},
-		{3, SHARK_TDPLL_FREQUENCY},
-		{4, CPUFREQ_TABLE_END},
+	.freq_tbl = {
+		{0, 1600000},
+		{1, 1500000},
+		{2, 1400000},
+		{3, 1300000},
+		{4, 1200000},
+		{5, 1100000},
+		{6, 1000000},
+		{7, 900000},
+		{8, 800000},
+		{9, 700000},
+		{10, 600000},
+		{11, 500000},
+		{12, 400000},
+		{13, 350000},
+		{14, CPUFREQ_TABLE_END},
 	},
 	.vddarm_mv = {
 		1050000,
@@ -434,8 +467,8 @@ static int sprd_cpufreq_verify_speed(struct cpufreq_policy *policy)
 	return cpufreq_frequency_table_verify(policy, sprd_cpufreq_conf->freq_tbl);
 }
 
-unsigned int cpufreq_min_limit = ULONG_MAX;
-unsigned int cpufreq_max_limit = 0;
+unsigned int cpufreq_min_limit = 300000;
+unsigned int cpufreq_max_limit = 1600000;
 unsigned int dvfs_score_select = 5;
 unsigned int dvfs_unplug_select = 2;
 unsigned int dvfs_plug_select = 0;
