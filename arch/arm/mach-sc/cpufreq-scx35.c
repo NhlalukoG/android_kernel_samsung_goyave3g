@@ -30,7 +30,6 @@
 #include <trace/events/power.h>
 
 #include <mach/hardware.h>
-#include <mach/regulator.h>
 #include <mach/adi.h>
 #include <mach/sci.h>
 #include <mach/sci_glb_regs.h>
