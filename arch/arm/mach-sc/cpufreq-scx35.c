@@ -81,11 +81,21 @@ static struct cpufreq_table_data sc8830_cpufreq_table_data_cs = {
 		{14, CPUFREQ_TABLE_END},
 	},
 	.vddarm_mv = {
-		1300000,
-		1200000,
-		1150000,
 		1100000,
+		1100000,
+		1050000,
+		1050000,
+		1050000,
 		1000000,
+		950000,
+		950000,
+		900000,
+		900000,
+		900000,
+		850000,
+		850000,
+		850000,
+		850000,
 	},
 };
 
@@ -108,9 +118,21 @@ static struct cpufreq_table_data sc8830_cpufreq_table_data_es = {
 		{14, CPUFREQ_TABLE_END},
 	},
 	.vddarm_mv = {
-		1250000,
-		1200000,
+		1100000,
+		1100000,
+		1050000,
+		1050000,
+		1050000,
 		1000000,
+		950000,
+		950000,
+		900000,
+		900000,
+		900000,
+		850000,
+		850000,
+		850000,
+		850000,
 	},
 };
 
@@ -132,7 +154,6 @@ static struct cpufreq_table_data sc8830t_cpufreq_table_data_es = {
 #else
 static struct cpufreq_table_data sc8830t_cpufreq_table_data_es_1300 = {
 	.freq_tbl = {
-	.freq_tbl = {
 		{0, 1600000},
 		{1, 1500000},
 		{2, 1400000},
@@ -150,11 +171,21 @@ static struct cpufreq_table_data sc8830t_cpufreq_table_data_es_1300 = {
 		{14, CPUFREQ_TABLE_END},
 	},
 	.vddarm_mv = {
+		1100000,
+		1100000,
+		1050000,
+		1050000,
 		1050000,
 		1000000,
+		950000,
+		950000,
 		900000,
 		900000,
 		900000,
+		850000,
+		850000,
+		850000,
+		850000,
 	},
 };
 #endif
