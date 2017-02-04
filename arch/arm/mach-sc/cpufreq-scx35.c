@@ -64,75 +64,31 @@ struct cpufreq_conf *sprd_cpufreq_conf = NULL;
 
 static struct cpufreq_table_data sc8830_cpufreq_table_data_cs = {
 	.freq_tbl = {
-		{0, 1600000},
-		{1, 1500000},
-		{2, 1400000},
-		{3, 1300000},
-		{4, 1200000},
-		{5, 1100000},
-		{6, 1000000},
-		{7, 900000},
-		{8, 800000},
-		{9, 700000},
-		{10, 600000},
-		{11, 500000},
-		{12, 400000},
-		{13, 350000},
-		{14, CPUFREQ_TABLE_END},
+		{0, 1200000},
+		{1, 1000000},
+		{2, SHARK_TDPLL_FREQUENCY},
+		{3, 600000},
+		{4, CPUFREQ_TABLE_END},
 	},
 	.vddarm_mv = {
-		1100000,
-		1100000,
-		1050000,
-		1050000,
-		1050000,
-		1000000,
-		950000,
-		950000,
-		900000,
-		900000,
-		900000,
-		850000,
-		850000,
-		850000,
-		850000,
+ 		1300000,
+ 		1200000,
+ 		1150000,
+ 		1100000,
+ 		1000000,
 	},
 };
 
 static struct cpufreq_table_data sc8830_cpufreq_table_data_es = {
 	.freq_tbl = {
-		{0, 1600000},
-		{1, 1500000},
-		{2, 1400000},
-		{3, 1300000},
-		{4, 1200000},
-		{5, 1100000},
-		{6, 1000000},
-		{7, 900000},
-		{8, 800000},
-		{9, 700000},
-		{10, 600000},
-		{11, 500000},
-		{12, 400000},
-		{13, 350000},
-		{14, CPUFREQ_TABLE_END},
+		{0, 1000000},
+		{1, SHARK_TDPLL_FREQUENCY},
+		{2, CPUFREQ_TABLE_END},
 	},
 	.vddarm_mv = {
-		1100000,
-		1100000,
-		1050000,
-		1050000,
-		1050000,
-		1000000,
-		950000,
-		950000,
-		900000,
-		900000,
-		900000,
-		850000,
-		850000,
-		850000,
-		850000,
+ 		1250000,
+ 		1200000,
+ 		1000000,
 	},
 };
 
@@ -371,8 +327,8 @@ static int sprd_cpufreq_verify_speed(struct cpufreq_policy *policy)
 	return cpufreq_frequency_table_verify(policy, sprd_cpufreq_conf->freq_tbl);
 }
 
-unsigned int cpufreq_min_limit = 300000;
-unsigned int cpufreq_max_limit = 1600000;
+unsigned int cpufreq_min_limit = ULONG_MAX;
+unsigned int cpufreq_max_limit = 0;
 unsigned int dvfs_score_select = 5;
 unsigned int dvfs_unplug_select = 2;
 unsigned int dvfs_plug_select = 0;
