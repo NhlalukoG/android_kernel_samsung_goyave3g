@@ -35,7 +35,7 @@
 #include <mach/sci_glb_regs.h>
 #include <mach/arch_misc.h>
 
-#define FREQ_TABLE_SIZE 	15
+#define FREQ_TABLE_SIZE 	10
 #define DVFS_BOOT_TIME	(30 * HZ)
 #define SHARK_TDPLL_FREQUENCY	(768000)
 #define TRANSITION_LATENCY	(50 * 1000) /* ns */
@@ -110,38 +110,18 @@ static struct cpufreq_table_data sc8830t_cpufreq_table_data_es = {
 #else
 static struct cpufreq_table_data sc8830t_cpufreq_table_data_es_1300 = {
 	.freq_tbl = {
-		{0, 1600000},
-		{1, 1500000},
-		{2, 1400000},
-		{3, 1300000},
-		{4, 1200000},
-		{5, 1100000},
-		{6, 1000000},
-		{7, 900000},
-		{8, 800000},
-		{9, 700000},
-		{10, 600000},
-		{11, 500000},
-		{12, 400000},
-		{13, 350000},
-		{14, CPUFREQ_TABLE_END},
+		{0, 1300000},
+		{1, 1200000},
+		{2, 1000000},
+		{3, SHARK_TDPLL_FREQUENCY},
+		{4, CPUFREQ_TABLE_END},
 	},
 	.vddarm_mv = {
-		1100000,
-		1100000,
-		1050000,
-		1050000,
 		1050000,
 		1000000,
-		950000,
-		950000,
 		900000,
 		900000,
 		900000,
-		850000,
-		850000,
-		850000,
-		850000,
 	},
 };
 #endif
